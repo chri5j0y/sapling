@@ -1183,6 +1183,8 @@ function renderGuide(opts){
 /* ---------- start ---------- */
 const yr = $('copyright-year'); if (yr) yr.textContent = new Date().getFullYear();
 renderHome();
+if (/^#(life|talk)/.test(location.hash)) go('life', {scroll:true});
+window.addEventListener('hashchange', () => { if (/^#(life|talk)/.test(location.hash)) go('life', {scroll:true}); });
 
 </script>
 <script src="https://growwithgrounded.com/read.js" defer></script>
